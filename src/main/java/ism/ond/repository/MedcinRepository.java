@@ -106,8 +106,12 @@ public class MedcinRepository extends Repository<Medcin> {
 
   @Override
   public Medcin convertToObject(ResultSet rs) throws SQLException {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'convertToObject'");
+    Medcin medcin = new Medcin();
+    medcin.setId(rs.getInt("id"));
+    medcin.setNom(rs.getString("nom"));
+    medcin.setPrenom(rs.getString("prenom"));
+
+    return medcin;
   }
 
 }
